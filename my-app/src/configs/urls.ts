@@ -1,0 +1,1 @@
+export const baseURL = 'https://fixer-fixer-currency-v1.p.rapidapi.com/latest'

@@ -1,0 +1,30 @@
+.convertor{
+  header{
+    color: #FDC42E;
+  }
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .currencies {
+    &__switch {
+      width: 200px;
+      height: 50px;
+      font-size: 20px;
+      font-weight: 900;
+      cursor: pointer;
+      border-radius: 10px;
+      border: none;
+      color: #FDC42E;
+      background: #18181A;
+    }
+    &__switch:hover {
+      transition: all 0.9s;
+      background: #FDC42E;
+      color: #18181A;
+    }
+  }
+
+}
