@@ -1,13 +1,46 @@
-.convertor{
-  header{
-    color: #FDC42E;
-  }
-  display: flex;
+.wrapper{
   width: 100vw;
   height: 100vh;
+  position: relative;
+.spinner {
+  position: absolute;
+  top:50%;
+  width: 100%;
+  &__loader {
+    width: 200px;
+    height: 200px;
+    border: 5px dotted #FDC42E;
+    border-radius: 50%;
+    display: inline-block;
+
+    box-sizing: border-box;
+    animation: rotation 2s linear infinite;
+  }
+}
+
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.convertor {
+  position: absolute;
+  top:50%;
+  width: 100%;
+  header {
+    color: #FDC42E;
+  }
+
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   .currencies {
     &__switch {
       width: 200px;
@@ -20,6 +53,7 @@
       color: #FDC42E;
       background: #18181A;
     }
+
     &__switch:hover {
       transition: all 0.9s;
       background: #FDC42E;
@@ -27,4 +61,5 @@
     }
   }
 
+}
 }

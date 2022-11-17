@@ -60,30 +60,36 @@ const Courencies: FC = () => {
     setSum2(sum1)
   }
 
-  return (
-    <div className={'convertor'} >
-      <header><h1>ITop1000 Converter</h1> </header>
-      <form className={'currencies'}>
-        <Courensy
-          curencies={keys}
-          sum={sum1}
-          currency={currency1}
-          onSumChange={handleSum1Change}
-          onCurrencyChange={handleCurrency1Change}
-        />
-        <Courensy
-          curencies={keys}
-          sum={sum2}
-          currency={currency2}
-          onSumChange={handleSum2Change}
-          onCurrencyChange={handleCurrency2Change}
-        />
-        <button className={'currencies__switch'} onClick={(e) => {
-          e.preventDefault()
-          switchCurrencies()
-        }}>switch
-        </button>
-      </form>
+  return (<div className={'wrapper'}>
+      {loading
+        ? (<div className={'spinner'}>
+            <span className="spinner__loader"></span>
+          </div>)
+        : (<div className={'convertor'}>
+          <header><h1>ITop1000 Converter</h1></header>
+          <form className={'currencies'}>
+            <Courensy
+              curencies={keys}
+              sum={sum1}
+              currency={currency1}
+              onSumChange={handleSum1Change}
+              onCurrencyChange={handleCurrency1Change}
+            />
+            <Courensy
+              curencies={keys}
+              sum={sum2}
+              currency={currency2}
+              onSumChange={handleSum2Change}
+              onCurrencyChange={handleCurrency2Change}
+            />
+            <button className={'currencies__switch'} onClick={(e) => {
+              e.preventDefault()
+              switchCurrencies()
+            }}>switch
+            </button>
+          </form>
+        </div>)}
+
     </div>
   );
 };
